@@ -1,0 +1,306 @@
+/**
+**比赛系统协议文件
+* 
+**/
+module match
+{
+    //排名信息
+    struct UserRankInfo
+    {
+        0 optional long uid;       //uid
+        1 optional int rank;       //排名
+        2 optional long chip;      //筹码
+    };
+
+    //玩家比赛信息
+    struct UserMatchInfo
+    {
+        0 optional long uid;        //uid
+        1 optional long chip;       //筹码
+    };
+
+    //上报玩家游戏信息请求
+    struct ReportUserGameInfoReq 
+    {
+        0 optional int matchID;     //比赛ID
+        1 optional map<long, UserMatchInfo> userInfo;  //玩家比赛信息, uid:
+    };
+
+    //上报玩家游戏信息应答
+    struct ReportUserGameInfoResp
+    {
+        0 optional int resultCode;  //结果码
+    };
+
+    //上报玩家淘汰信息请求
+    struct ReportUserKnockoutInfoReq
+    {
+        0 optional int matchID;             //比赛ID
+        1 optional vector<long> vecUin;     //淘汰玩家
+    };
+
+    //上报玩家淘汰信息应答
+    struct ReportUserKnockoutInfoResp
+    {
+        0 optional int resultCode;  //结果码
+    };
+
+    //玩家状态
+    enum UserState
+    {
+        USER_STATE_DEFAULT         = 0, //初始状态
+        USER_STATE_PLAYING_GAME    = 1, //比赛中
+        USER_STATE_KNOCKOUT        = 2, //淘汰
+    };
+
+    //上报玩家状态信息请求
+    struct ReportUserStateReq
+    {
+        0 optional int matchID;             //比赛ID
+        1 optional map<long, UserState> mapState;  //玩家状态
+    };
+
+    //上报玩家状态信息应答
+    struct ReportUserStateResp
+    {
+        0 optional int resultCode;  //结果码
+    };
+
+    //比赛状态
+    enum MatchState
+    {
+        MATCH_STATE_DEFAULT         = 0,
+        MATCH_STATE_PLAYING_GAME    = 1,    //比赛中
+        MATCH_STATE_END             = 2,    //比赛结束
+    };
+
+    //比赛信息
+    struct MatchInfo
+    {
+        0 optional int startTime;       //开赛时间
+        1 optional int count;           //参赛人数
+        2 optional int remainingCount;  //剩余人数
+        3 optional long avgChip;        //平均记分牌
+        4 optional int remainingTime;   //升盲剩余时间, 秒
+        5 optional int blindLevel;      //当前盲注级别
+        6 optional int maxBlindLevel;   //最大盲注级别
+        7 optional MatchState matchState; //比赛状态
+        8 optional int startTimeType;     //开始时间类型，0--每日赛；1--定时赛
+    };
+
+    //上报比赛信息请求
+    struct ReportMatchInfoReq
+    {
+        0 optional map<int, MatchInfo> data;  //比赛信息，matchid:
+    };
+
+    //上报比赛信息应答
+    struct ReportMatchInfoResp
+    {
+        0 optional int resultCode;  //结果码
+    };
+
+    //用户报名费
+    struct UserEntryFee
+    {
+        0 optional int propsID;     //道具ID
+        1 optional long number;     //道具数量
+        2 optional long serviceFee;  //服务费
+    };
+
+    //用户报名信息
+    struct SignUpInfo
+    {
+        0 optional int matchID;     //比赛ID
+        1 optional long chip;       //筹码
+        2 optional int ranking;     //排名
+        3 optional int additional;  //剩余增购次数
+        4 optional int repurchase;  //剩余重购次数
+        5 optional UserEntryFee userEntryFee; //报名费
+        6 optional UserState userState; //用户状态
+        7 optional int showtype; //
+    };
+
+    //用户所有的报名信息
+    struct UserSignUpInfo
+    {
+        0 optional map<int, SignUpInfo> data;  //报名数据，matchid:
+    };
+
+    //用户报名信息请求
+    struct UserSignUpInfoReq
+    {
+        0 optional long uid;        //uid
+        1 optional int matchID;     //比赛ID
+        2 optional int showtype;    //
+    };
+
+    //用户报名信息应答
+    struct UserSignUpInfoResp
+    {
+        0 optional int resultCode;      //结果码
+        1 optional SignUpInfo info;     //报名信息
+    };
+
+    //用户所有报名信息请求
+    struct UserAllSignUpInfoReq
+    {
+        0 optional long uid;        //uid
+    };
+
+    //用户所有报名信息应答
+    struct UserAllSignUpInfoResp
+    {
+        0 optional int resultCode;      //结果码
+        1 optional UserSignUpInfo info;  // 报名信息
+    };
+
+    //消耗类型
+    enum ConsumeType
+    {
+        CONSUME_TYPE_REPURCHASE     = 0,    // 重购
+        CONSUME_TYPE_ADDITIONAL     = 1,    // 增购
+    };
+
+    //增购，重购消耗请求
+    struct ConsumeBuyResReq
+    {
+        0 optional long uid;        //uid
+        1 optional int matchID;     //比赛ID
+        2 optional ConsumeType consumeType;  //消耗类型
+        3 optional bool add;                //是否增购或者重购
+    };
+
+    //增购，重购消耗应答
+    struct ConsumeBuyResResp
+    {
+        0 optional int resultCode;      //结果码, 0--正常，其他--失败
+        1 optional int left;            //剩余机会
+        2 optional bool add;                //是否增购或者重购
+    };
+
+    //比赛信息请求
+    struct MatchInfoReq
+    {
+        0 optional int matchID;     //比赛ID
+    };
+
+    //比赛信息应答
+    struct MatchInfoResp
+    {
+        0 optional int resultCode;              //结果码
+        1 optional map<int, MatchInfo> data;    //比赛信息
+    };
+
+    //比赛报名用户信息请求
+    struct MatchUserInfoReq
+    {
+        0 optional int matchID;     //比赛ID
+    };
+
+    //比赛报名用户信息应答
+    struct MatchUserInfoResp
+    {
+        0 optional int resultCode;          //结果码
+        1 optional vector<long> vecUid;     //报名用户
+    };
+
+    //取消比赛请求
+    struct CancelMatchReq
+    {
+        0 optional int matchID;         //比赛ID
+    };
+
+    //取消比赛应答
+    struct CancelMatchResp
+    {
+        0 optional int resultCode;      //结果码
+    };
+
+    //清理比赛请求
+    struct CleanMatchReq
+    {
+        0 optional int matchID;         //比赛ID
+        1 optional bool bSng;
+        2 optional long Uid; //清理用户
+    };
+
+    //清理比赛应答
+    struct CleanMatchResp
+    {
+        0 optional int resultCode;      //结果码
+    };
+
+    //奖励物品
+    struct RewardGoods
+    {
+        1 optional int propsID;         //道具ID
+        2 optional long number;         //数量
+        3 optional int type;            //道具类型，0--道具，1--金币
+    };
+
+    //发送奖励请求
+    struct RewardReq
+    {
+        0 optional int matchID;             //比赛ID
+        1 optional vector<long> vecUid;     //奖励用户
+        2 optional vector<RewardGoods> items;  //滚轮赛奖励
+        3 optional bool isSng;                 //是否是sng
+        4 optional int iRank;                  //指定奖励名次
+    };
+
+    //玩家奖励物品
+    struct UserRewardGoods
+    {
+        0 optional long uid;        //玩家ID
+        1 optional long total;      //总奖励
+        2 optional int ratio;       //奖励比例
+        3 optional vector<RewardGoods> goods;  //奖励物品
+    };
+
+    //发送奖励应答
+    struct RewardResp
+    {
+        0 optional int resultCode;          //结果码
+        1 optional map<long, UserRewardGoods> data;         //排名奖励, ranking:
+    };
+
+    //报名请求
+    struct SignUpReq
+    {
+        0 optional long uid;        //uid
+        1 optional int matchID;     //比赛ID
+        2 optional bool delay;      //延迟报名
+        3 optional bool isSng;
+        4 optional int tableID;
+        5 optional bool isRobot;
+    };
+
+    //报名应答
+    struct SignUpResp
+    {
+        0 optional int resultCode;	//结果码, 0--正常，其他--错误
+        1 optional UserEntryFee entryFee;  //报名费
+        2 optional bool delay;      //延迟报名
+        3 optional string roomID;   //房间号
+        4 optional string matchID;
+        5 optional int tableID;
+    };
+
+    //取消报名请求
+    struct QuitReq
+    {
+        1 optional long uid;        //uid
+        0 optional int matchID;     //比赛ID
+        2 optional bool drawback;   //是否退税
+        3 optional bool isSng;
+    };
+
+    //取消报名应答
+    struct QuitResp
+    {
+        0 optional int resultCode;	//结果码， 0--正常， 其他--错误
+        1 optional UserEntryFee entryFee;  //报名费
+    };
+}; 
+

@@ -1,0 +1,65 @@
+#include "MatchProto.tars"
+#include "/home/tarsproto/XGame/Comm/JFGame.tars"
+
+/**
+**比赛系统接口
+* 
+**/
+module match
+{
+    interface MatchServant
+    {
+        //http请求处理接口
+        int doRequest(vector<byte> reqBuf, map<string, string> extraInfo, out vector<byte> rspBuf);
+
+        //tcp请求处理接口
+        int onRequest(long lUin, string sMsgPack, string sCurServrantAddr, JFGame::TClientParam stClientParam, JFGame::UserBaseInfoExt stUserBaseInfo);
+
+        //上报玩家游戏信息
+        int reportUserGameInfo(ReportUserGameInfoReq req, out ReportUserGameInfoResp resp);
+
+        //上报玩家淘汰信息
+        int reportUserKnockoutInfo(ReportUserKnockoutInfoReq req, out ReportUserKnockoutInfoResp resp);
+
+        //上报玩家状态信息
+        int reportUserState(ReportUserStateReq req, out ReportUserStateResp resp);
+
+        //上报比赛信息
+        int reportMatchInfo(ReportMatchInfoReq req, out ReportMatchInfoResp resp);
+
+        //上报滚轮赛奖励信息
+        int reportMatchReward(RewardGoods req, int matchID, int tableID);
+
+        //取用户报名信息
+        int getUserSignUpInfo(UserSignUpInfoReq req, out UserSignUpInfoResp resp);
+
+        //取用户所有报名信息
+        int getUserAllSignUpInfo(UserAllSignUpInfoReq req, out UserAllSignUpInfoResp resp);
+
+        //增购，重购消耗请求
+        int consumeBuyRes(ConsumeBuyResReq req, out ConsumeBuyResResp resp);
+
+        //取比赛信息
+        int getMatchInfo(MatchInfoReq req, out MatchInfoResp resp);
+
+        //比赛报名信息
+        int getMatchUserInfo(MatchUserInfoReq req, out MatchUserInfoResp resp);
+
+        //取消比赛
+        int cancelMatch(CancelMatchReq req, out CancelMatchResp resp);
+
+        //清理比赛
+        int cleanMatch(CleanMatchReq req, out CleanMatchResp resp);
+
+        //发送奖励
+        int reward(RewardReq req, out RewardResp resp);
+
+        //报名请求
+        int signUp(SignUpReq req, out SignUpResp resp);
+
+        //取消报名请求
+        int quit(QuitReq req, out QuitResp resp);
+
+        int reportOnlineCount(string roomID, long smallBlind, long count);
+    };
+}; 
