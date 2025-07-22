@@ -1,6 +1,8 @@
 # Texas-Hold-em-game
-德州扑克源代码，出售德州金币大厅源码，德州竞技者联盟模式代码，有短牌，sng，经典德州，竞技场，朋友局俱乐部。线上成功运营产品，可以上线iOS和google商店。代码稳定，产品品质优良。tg：@xuzongbin001 或E_MIAL：masterai918@gmail.com
-[我们的德州项目不是网上那种外包团队的德州产品：没有在市场上盈利过，中看不中用，服务器漏洞不少的德州产品]
+德州扑克源代码，德州金币大厅源码，德州竞技者联盟模式代码，有短牌，sng，经典德州，竞技场，朋友局俱乐部。线上成功运营产品，可以上线iOS和google商店。代码稳定，产品品质优良。tg：@xuzongbin001 或E_MIAL：masterai918@gmail.com
+
+
+
 ![大厅-俱乐部](https://github.com/user-attachments/assets/7da76d6b-c7fd-4e36-87e8-61f5bd504438)
 ![03](https://github.com/user-attachments/assets/c14eea6e-0b4f-4ab2-aeab-2feb4bbca81b)
 ![011](https://github.com/user-attachments/assets/458660cc-f376-4939-a924-8039c1f556e9)
