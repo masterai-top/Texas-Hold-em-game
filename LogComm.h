@@ -24,18 +24,29 @@ using namespace tars;
 //配置信息
 #define FDLOG_CONFIG_INFO (FDLOG("config_info") << "|")
 
-//牌局报名记录日志
-#define MATCH_ENTER_LOG_TOPIC "match_enter_log"
-#define FDLOG_MATCH_ENTER_LOG (FDLOG("match_enter_log") << "|")
+//充值日志
+#define	FDLOG_RECHARGE_LOG (FDLOG("recharge_log") << "|")
 
-//比赛排名奖励
-#define MATCH_RANK_LOG_TOPIC "match_rank_log"
-#define FDLOG_MATCH_RANK_LOG (FDLOG("match_rank_log") << "|")
-
+//
 #define FDLOG_INIT_FORMAT(x,y,z) (TarsTimeLogger::getInstance()->initFormatWithType<LogByMinute>(x,y,z))
-#define FDLOG_MATCH_ENTER_LOG_FORMAT (FDLOG_INIT_FORMAT("match_enter_log", "%Y%m%d%H%M", 5))
-#define FDLOG_MATCH_RANK_LOG_FORMAT (FDLOG_INIT_FORMAT("match_rank_log", "%Y%m%d%H%M", 5))
+#define FDLOG_RECHARGE_LOG_FORMAT (FDLOG_INIT_FORMAT("recharge_log", "%Y%m%d%H%M", 5))
 
+template<typename T>
+std::string toString(T t) {
+	ostringstream os;
+	os << t;
+	return os.str();
+}
+template<typename T, typename... Args>
+std::string toString(T head, Args... args) {
+	ostringstream os;
+	os << head;
+	return os.str() + toString(args...);
+}
+
+#define THROW_LOGIC_ERROR(...) throw logic_error(toString("[", __FILE__, ":" , __LINE__ , ":" , __FUNCTION__ , "] ", __VA_ARGS__))
+
+//接口性能边界值
 #define COST_MS 100
 
 #endif
