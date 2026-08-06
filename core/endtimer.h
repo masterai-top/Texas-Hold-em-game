@@ -1,6 +1,8 @@
 #pragma once
 
-#include<vector>
+#include "common/nndef.h"
+
+using namespace nndef;
 
 namespace game
 {
@@ -10,8 +12,7 @@ namespace game
     {
         namespace gamelogic
         {
-            int CheckBegin(GameRoot *root);
-            int RemoveUser(GameRoot *root, std::vector<long> vdelUser);
+            void EndTimer(E_NN_XTIME xtimekey, GameRoot *root, bool toclient = true);
         }
     }
 }
