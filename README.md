@@ -1,16 +1,9 @@
-🔥 Commercial Texas Hold’em Poker League Platform | Multiplayer Server + Club System + Tournament + AI
-👉 Ready to Launch | High Profit System | Full Source Code
-# 🎰 德州扑克完整运营级源码 |德州扑克完整解决方案 |德州源码|德州源碼|德州撲克|德州俱樂部|德州私人局|德州游戏源码|Mã nguồn Poker |Texas Hold'em Complete Game Source Code| 
+# 德州源码：C++ 德州扑克俱乐部与比赛服务端
 
-> **线上成功运营产品 | 6种玩法+10+运营活动 | 支持iOS/Google Play上架**
+[![Language](https://img.shields.io/badge/language-C%2B%2B-00599c?logo=cplusplus)](https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code)
+[![Stars](https://img.shields.io/github/stars/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code?style=flat)](https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code/stargazers)
+[![License](https://img.shields.io/badge/license-see%20License.md-blue)](./License.md)
 
-[![Contact](https://img.shields.io/badge/联系-TG%3A%40xuzongbin001-blue)](https://t.me/xuzongbin001)
-[![Platform](https://img.shields.io/badge/平台-iOS%20%7C%20Android%20%7C%20H5-green)]()
-[![License](https://img.shields.io/badge/授权-商业源码-red)]()
-
-💡 Build your own poker platform in minutes  
-💡 快速搭建你的德州扑克平台  
-💡 快速建立你的德州撲克平台  
 
 🔥 Online Multiplayer Poker System  
 🔥 Club System + Agent System  
@@ -32,9 +25,6 @@ This is a production-ready Texas Hold’em poker platform source code
 包含即時多人對戰、AI系統、俱樂部與MTT，SNG錦標賽系統  
 Including multiplayer real-time engine, AI system, club & MTT，SNG tournament system  
 
-👉 可直接商业化运营  
-👉 可直接商業化運營  
-👉 Ready for commercial use  
 
 ## ✨ 核心功能 | Core Features
 
@@ -80,7 +70,15 @@ Including multiplayer real-time engine, AI system, club & MTT，SNG tournament s
 - 俱樂部 + 代理系統  
 - 可部署與客製化  
 
+## 文档导航
 
+- [德州扑克俱乐部源码说明](./docs/texas-holdem-club-source-code.md)
+- [比赛服务端架构](./docs/server-architecture.md)
+- [构建与 Unity 完整性检查](./docs/build-guide.md)
+- [匹配与牌局流程](./docs/match-game-flow.md)
+- [Tars 协议与消息](./docs/tars-message-guide.md)
+- [奖励、订单、安全与合规](./docs/security-compliance.md)
+- [常见问题](./docs/faq.md)
 
 
 ## 🎥 Live Demo | 演示 | 演示
@@ -97,18 +95,11 @@ Watch real gameplay below 👇
 ![俱乐部13](https://github.com/user-attachments/assets/f32680d7-993f-436e-9c33-7e5afa7f53d8)
 ![经典德州-6人牌桌(TT)](https://github.com/user-attachments/assets/c3aa5e8a-be05-495e-aa82-7be46f255bc6)
 
-## 💰 获取源码 | Contact
+## 💰  问题反馈与交流
 
-✅ 完整服务端源码  
-✅ 完整客户端源码  
-✅ 数据库脚本  
-✅ 美术资源  
-✅ 部署文档  
 
 📱 **Telegram：@xuzongbin001**  
 📧 **Email：masterai918@gmail.com**
-
-👉 **联系我获取演示站 + 详细报价**
 
 ---
 ## ✨ Key Features 
