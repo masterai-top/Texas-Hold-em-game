@@ -13,8 +13,7 @@
 👉 📩 Contact Now for Full Version  
 💰 Launch your own poker business  
 💰 Start your poker platform today  
-💰 Launch your poker business today  
-💰 Start earning with your own poker platform  
+
 ## 🚀 项目介绍 / 專案介紹 / Project Overview
 
 本项目是一套完整的德州扑克平台系统源码  
@@ -100,7 +99,12 @@ Watch real gameplay below 👇
 
 📱 **Telegram：@xuzongbin001**  
 📧 **Email：masterai918@gmail.com**
+## MasterAI 相关德州扑克项目
 
+- [MasterAI 项目主页](https://github.com/masterai-top)
+- [德州俱乐部完整解决方案](https://github.com/masterai-top/TexasHoldem-Poker-Complete-Solution)
+- [德州扑克赛事平台](https://github.com/masterai-top/Texas-Holdem-Poker-Tournament-Event-Platform)
+- [CFR 德州扑克 AI](https://github.com/masterai-top/cfr-poker-ai-masterai)
 ---
 ## ✨ Key Features 
 
