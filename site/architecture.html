@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C++ Tars 比赛服务端架构 | 德州扑克源码</title>
+  <meta name="description" content="德州扑克 C++ 比赛服务端、Order 服务、Tars 协议、Processor、TimerThread 与牌局生命周期组件架构说明。">
+  <link rel="canonical" href="https://masterai-top.github.io/Texas-Holdem-Poker-Game-Server-Club-Source-Code/architecture.html">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="主导航"><a class="brand" href="index.html">MasterAI Poker Server</a><div class="nav-links"><a href="features.html">产品展示</a><a href="architecture.html">技术架构</a><a href="deployment.html">部署检查</a><a href="responsible-use.html">合规使用</a><a href="https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code">GitHub</a></div></nav></header>
+  <main>
+    <section class="page-hero"><div class="container"><p class="eyebrow">C++ · Tars · Game Flow</p><h1>德州扑克比赛服务端架构</h1><p>根据当前公开文件整理 Match、Order、Tars 接口、Processor、定时器和牌局流程组件；不推断仓库中不可见的生产基础设施。</p></div></section>
+    <section class="band white"><div class="container content-grid"><aside class="toc"><strong>架构导航</strong><a href="#components">组件</a><a href="#flow">流程</a><a href="#protocol">协议</a><a href="#missing">待补能力</a></aside><div class="prose">
+      <section id="components"><h2>公开组件</h2><table><thead><tr><th>组件</th><th>公开文件</th><th>职责</th></tr></thead><tbody><tr><td>Match Server</td><td><code>MatchServer.*</code>、<code>MatchServant*</code></td><td>服务入口与 Tars 调用处理</td></tr><tr><td>Order Server</td><td><code>OrderServer.*</code>、<code>OrderServant*</code></td><td>订单相关接口框架</td></tr><tr><td>Processor</td><td><code>Processor.*</code></td><td>匹配、房间和消息处理</td></tr><tr><td>Timer</td><td><code>TimerThread.*</code></td><td>定时与超时逻辑</td></tr><tr><td>Game flow</td><td><code>gamebegin.h</code> 等</td><td>开始、行动、发牌、计算和结束</td></tr><tr><td>Shared logic</td><td><code>common/</code>、<code>core/</code></td><td>牌型与公共实现</td></tr></tbody></table></section>
+      <section id="flow"><h2>请求与牌局流程</h2><p>客户端请求通常应先经过连接、鉴权和限流，再进入 Tars 服务接口。比赛服务负责匹配和房间状态，牌局模块处理合法动作、计时、发牌、结果和广播。数据库、余额、审计和运营服务必须通过明确边界接入。</p></section>
+      <section id="protocol"><h2>协议版本与兼容性</h2><p><code>MatchProto.tars</code>、<code>MatchServant.tars</code> 和 <code>OrderServant.tars</code> 是重要公共契约。发布时应记录字段变化、默认值、向前与向后兼容策略、错误码和灰度升级顺序。</p></section>
+      <section id="missing"><h2>生产环境待补能力</h2><div class="info">当前公开树无法验证完整网关、鉴权、持久化迁移、监控、备份、CI、负载测试和安全审计。架构图只描述可见代码的逻辑位置，不代表完整生产拓扑。</div></section>
+    </div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><a href="index.html">返回首页</a> · <a href="deployment.html">部署检查</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>德州扑克俱乐部源码 | C++ Tars 比赛服务端</title>
+  <meta name="description" content="德州扑克俱乐部源码项目，公开 C++ Match 与 Order 服务、Tars 协议、牌局流程、Unity 项目元数据、产品截图和技术文档。">
+  <link rel="canonical" href="https://masterai-top.github.io/Texas-Holdem-Poker-Game-Server-Club-Source-Code/">
+  <meta property="og:title" content="Texas Hold'em Club Source Code and C++ Match Server">
+  <meta property="og:description" content="C++ Tars match server, game-flow components, Unity project metadata, product screenshots, and deployment guidance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://masterai-top.github.io/Texas-Holdem-Poker-Game-Server-Club-Source-Code/">
+  <meta property="og:image" content="https://masterai-top.github.io/Texas-Holdem-Poker-Game-Server-Club-Source-Code/assets/screenshots/lobby.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "Texas Hold'em Poker Game Server and Club Source Code",
+    "codeRepository": "https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code",
+    "programmingLanguage": ["C++", "Tars IDL"],
+    "description": "C++ Texas Hold'em match and order server code, Tars protocols, game-flow components, Unity project metadata, documentation, and product screenshots.",
+    "author": {"@type": "Organization", "name": "MasterAI", "url": "https://github.com/masterai-top"}
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="主导航"><a class="brand" href="index.html">MasterAI Poker Server</a><div class="nav-links"><a href="features.html">产品展示</a><a href="architecture.html">技术架构</a><a href="deployment.html">部署检查</a><a href="responsible-use.html">合规使用</a><a href="https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code">GitHub</a></div></nav></header>
+  <main>
+    <section class="hero">
+      <img class="hero-media" src="assets/screenshots/lobby.jpg" alt="德州扑克大厅、SNG、MTT 与俱乐部入口">
+      <div class="hero-inner"><p class="eyebrow">C++ · Tars · Match Server · Unity Metadata</p><h1>德州扑克俱乐部源码</h1><p>公开 C++ 比赛与订单服务、Tars 协议、牌局流程组件、Unity 项目元数据、产品截图和技术文档。当前公开范围需要构建审计与集成验证。</p><div class="actions"><a class="button" href="architecture.html">查看技术架构</a><a class="button secondary" href="https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code">查看仓库</a></div></div>
+    </section>
+    <section class="band white"><div class="container"><p class="eyebrow">Public Scope</p><h2>先说明公开了什么</h2><p class="lead">仓库包含 Match/Order 服务端、Tars 接口、牌局生命周期、公共逻辑和 Unity 元数据；但公开目录没有 Unity Assets、完整数据库迁移、自动化测试或经验证的一键部署环境。</p><div class="metrics"><div class="metric"><strong>C++</strong><span>比赛与订单服务</span></div><div class="metric"><strong>Tars</strong><span>接口与消息协议</span></div><div class="metric"><strong>Game Flow</strong><span>开始、行动、结算、超时</span></div><div class="metric"><strong>Unity Metadata</strong><span>Packages 与 ProjectSettings</span></div></div></div></section>
+    <section class="band"><div class="container"><p class="eyebrow">Repository Components</p><h2>可验证的主要组件</h2><div class="feature-grid"><article class="feature-item"><strong>Match Service</strong><h3>比赛与房间处理</h3><p>MatchServer、MatchServant、Processor 与 TimerThread 组成主要服务端入口。</p></article><article class="feature-item"><strong>Order Service</strong><h3>订单接口</h3><p>OrderServer 与 Tars 接口提供订单相关服务框架，部署前需审计幂等和结算。</p></article><article class="feature-item"><strong>Game Lifecycle</strong><h3>牌局状态流程</h3><p>覆盖牌局开始、动作、发牌、计算、结束和消息处理相关文件。</p></article><article class="feature-item"><strong>Protocol</strong><h3>Tars 接口定义</h3><p>协议文件用于服务调用和消息交换，仍需补充版本与兼容策略。</p></article><article class="feature-item"><strong>Shared Logic</strong><h3>牌型与公共逻辑</h3><p>common、core 和 config 目录承载公共实现与配置相关代码。</p></article><article class="feature-item"><strong>Client Metadata</strong><h3>Unity 项目设置</h3><p>包含 Packages 和 ProjectSettings；缺少 Assets 时不能构建完整客户端。</p></article></div></div></section>
+    <section class="band dark"><div class="container"><p class="eyebrow">Server Flow</p><h2>服务链路</h2><p class="lead">真实部署需要补充网关、鉴权、持久化、监控、备份、测试和安全控制。</p><div class="pipeline"><div class="pipeline-step"><h3>客户端/网关</h3><p>连接、鉴权与限流。</p></div><div class="pipeline-step"><h3>Tars 接口</h3><p>请求与消息协议。</p></div><div class="pipeline-step"><h3>比赛处理</h3><p>房间、匹配与牌局。</p></div><div class="pipeline-step"><h3>状态与结算</h3><p>超时、结果和幂等。</p></div><div class="pipeline-step"><h3>外部系统</h3><p>数据库、日志与运营服务。</p></div></div></div></section>
+    <section class="band white"><div class="container"><p class="eyebrow">Product Screenshots</p><h2>产品界面</h2><div class="gallery"><figure><img loading="lazy" src="assets/screenshots/table.jpg" alt="多人德州扑克牌桌"><figcaption>多人实时牌桌</figcaption></figure><figure><img loading="lazy" src="assets/screenshots/room-settings.jpg" alt="德州扑克房间设置"><figcaption>经典德州、AOF 与短牌设置</figcaption></figure><figure><img loading="lazy" src="assets/screenshots/club.jpg" alt="德州扑克俱乐部房间列表"><figcaption>俱乐部房间与牌局</figcaption></figure><figure><img loading="lazy" src="assets/screenshots/rank-game.png" alt="德州扑克排位赛界面"><figcaption>排位与竞赛入口</figcaption></figure></div></div></section>
+    <section class="band felt"><div class="container"><h2>上线之前，先完成技术与合规审计</h2><p class="lead">截图、Stars 或文件数量不能替代干净环境构建、自动化测试、第三方授权、安全评估和属地法律审查。</p><div class="actions"><a class="button" href="deployment.html">查看部署检查</a><a class="button secondary" href="responsible-use.html">查看合规原则</a></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container">MasterAI · <a href="https://github.com/masterai-top">GitHub Profile</a> · <a href="mailto:masterai918@gmail.com">Technical Contact</a></div></footer>
+</body>
+</html>

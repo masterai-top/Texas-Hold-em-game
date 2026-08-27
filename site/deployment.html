@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>德州扑克服务端部署检查 | 构建、安全与上线</title>
+  <meta name="description" content="德州扑克 C++ Tars 服务端部署前的依赖、配置脱敏、测试、游戏公平性、运维、许可证和发布检查清单。">
+  <link rel="canonical" href="https://masterai-top.github.io/Texas-Holdem-Poker-Game-Server-Club-Source-Code/deployment.html">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="主导航"><a class="brand" href="index.html">MasterAI Poker Server</a><div class="nav-links"><a href="features.html">产品展示</a><a href="architecture.html">技术架构</a><a href="deployment.html">部署检查</a><a href="responsible-use.html">合规使用</a><a href="https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code">GitHub</a></div></nav></header>
+  <main>
+    <section class="page-hero"><div class="container"><p class="eyebrow">Build · Security · Operations</p><h1>服务端部署检查</h1><p>上线不是上传源码后运行一个命令。必须先完成许可证、依赖、配置、状态机、结算、安全、监控和合规检查。</p></div></section>
+    <section class="band white"><div class="container content-grid"><aside class="toc"><strong>检查导航</strong><a href="#build">构建</a><a href="#secrets">密钥</a><a href="#integrity">游戏完整性</a><a href="#ops">运维</a><a href="#release">发布</a></aside><div class="prose">
+      <section id="build"><h2>干净环境构建</h2><p>记录 Linux、GCC/G++、Tars、系统库和 Unity 版本；清理绝对路径；锁定依赖；在全新环境执行最小构建。没有 Unity <code>Assets/</code> 时，不要声称客户端可完整构建。</p></section>
+      <section id="secrets"><h2>配置与密钥</h2><p>扫描完整 Git 历史中的密码、令牌、私钥、生产地址和个人数据。删除文件不能让历史凭据失效，疑似泄漏的凭据必须轮换。</p></section>
+      <section id="integrity"><h2>游戏与结算完整性</h2><p>服务端应权威控制牌、动作、时间、余额和结果。测试重放、重复消息、并发动作、断线重连、超时、重复结算、订单幂等、机器人与合谋风险，并保留可审计日志。</p></section>
+      <section id="ops"><h2>生产运维</h2><p>补充健康检查、结构化日志、指标、告警、限流、最小权限、备份、恢复演练、回滚、事故响应和依赖漏洞管理。</p></section>
+      <section id="release"><h2>发布说明</h2><div class="notice">Release 必须列出实际包含的客户端、服务端、数据库和后台组件，以及构建状态、校验值、兼容性和已知限制。不要把产品截图当作完整性证明。</div></section>
+    </div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><a href="index.html">返回首页</a> · <a href="responsible-use.html">合规使用</a></div></footer>
+</body>
+</html>
