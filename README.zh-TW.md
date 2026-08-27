@@ -74,7 +74,7 @@
 
 - [MasterAI 專案首頁](https://github.com/masterai-top)
 - [德州俱樂部完整解決方案](https://github.com/masterai-top/TexasHoldem-Poker-Complete-Solution)
-- [德州撲克賽事平台](https://github.com/masterai-top/Texas-Holdem-Poker-Tournament-Event-Platform)
+- [德州金币大厅_积分大厅](https://github.com/masterai-top/Texas-Holdem-Poker-Tournament-Event-Platform)
 - [CFR 德州撲克 AI](https://github.com/masterai-top/cfr-poker-ai-masterai)
 
 ---
