@@ -1,28 +1,17 @@
-# 德州源码：C++ 德州扑克俱乐部与比赛服务端
+# 德州源码：C++ 德州金币大厅完整源码
 
 [![Language](https://img.shields.io/badge/language-C%2B%2B-00599c?logo=cplusplus)](https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code)
 [![Stars](https://img.shields.io/github/stars/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code?style=flat)](https://github.com/masterai-top/Texas-Holdem-Poker-Game-Server-Club-Source-Code/stargazers)
 [![License](https://img.shields.io/badge/license-see%20License.md-blue)](./License.md)
 
 
-🔥 Online Multiplayer Poker System  
-🔥 Club System + Agent System  
-🔥 Real-Time Gameplay + Full Source Code  
-
-👉 🚀 Live Demo Available  
-👉 📩 Contact Now for Full Version  
-💰 Launch your own poker business  
-💰 Start your poker platform today  
-
 ## 🚀 项目介绍 / 專案介紹 / Project Overview
 
 本项目是一套完整的德州扑克平台系统源码  
-本專案是一套完整的德州撲克平台系統原始碼  
-This is a production-ready Texas Hold’em poker platform source code  
 
-包含多人实时对战、AI系统、俱乐部与MTT，SNG比赛系统  
-包含即時多人對戰、AI系統、俱樂部與MTT，SNG錦標賽系統  
-Including multiplayer real-time engine, AI system, club & MTT，SNG tournament system  
+
+包含多人实时对战、经典德州，短牌，单座赛，多人锦标赛、好友局与MTT，SNG比赛系统  
+
 
 
 ## ✨ 核心功能 | Core Features
@@ -51,23 +40,12 @@ Including multiplayer real-time engine, AI system, club & MTT，SNG tournament s
 
 ## 🚀 What You Get | 你将获得 |
 
-### 🇺🇸 English
-- Full Texas Holdem poker system  
-- Multiplayer real-time gameplay  
-- Club system + agent system  
-- Ready for deployment & customization  
-
-### 🇨🇳 简体中文
 - 完整德州扑克系统源码  
 - 支持多人实时对战  
 - 俱乐部 + 代理体系  
 - 可直接部署或二次开发  
 
-### 🇹🇼 繁體中文
-- 完整德州撲克系統源碼  
-- 支援多人即時對戰  
-- 俱樂部 + 代理系統  
-- 可部署與客製化  
+
 
 ## 文档导航
 
@@ -80,11 +58,11 @@ Including multiplayer real-time engine, AI system, club & MTT，SNG tournament s
 - [常见问题](./docs/faq.md)
 
 
-## 🎥 Live Demo | 演示 | 演示
+## 🎥 Live Demo | 演示 
 
-Watch real gameplay below 👇  
+
 查看真实游戏演示 👇  
-查看真實遊戲演示 👇  
+
 ![大厅-俱乐部](https://github.com/user-attachments/assets/7da76d6b-c7fd-4e36-87e8-61f5bd504438)
 ![03](https://github.com/user-attachments/assets/c14eea6e-0b4f-4ab2-aeab-2feb4bbca81b)
 ![011](https://github.com/user-attachments/assets/458660cc-f376-4939-a924-8039c1f556e9)
