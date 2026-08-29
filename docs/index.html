@@ -1,78 +1,132 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta name="google-site-verification" content="rrp5Uvgzi-1-rMxUBfhV3wjlNrFqzwnqiA4e3qsOLEM" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Texas Hold'em Points Lobby Source Code</title>
-  <meta name="description" content="Texas Hold'em coin lobby and points room source code with poker lobby, club rooms, private rooms, MTT/SNG tournaments, rankings, shop, recharge, Unity3D client and C++ game server.">
-  <meta name="keywords" content="Texas Hold'em poker source code, Texas Hold'em Points Lobby, 德州扑克源码, 德州扑克金币大厅源码, 德州积分房源码, poker lobby system, poker club software, Unity3D poker game, C++ poker server">
+  <title>Texas Hold'em Points Lobby Source Code - 德州扑克金币大厅与积分房源码</title>
+  <meta name="description" content="德州扑克金币大厅与积分房源码，支持金币大厅、积分房、俱乐部、私人房间、MTT/SNG 锦标赛、排行榜、商城、充值、Unity3D 客户端、C++ 游戏服务端和多语言版本。">
+  <meta name="keywords" content="德州扑克源码, 德州源码, 德州扑克金币大厅源码, 德州积分房源码, 德州俱乐部源码, Texas Hold'em Points Lobby, Poker Lobby System, Unity3D Poker Game, C++ Poker Server">
   <link rel="canonical" href="https://masterai-top.github.io/Texas-Hold-em-Points-Lobby/">
+  <meta property="og:title" content="Texas Hold'em Points Lobby Source Code">
+  <meta property="og:description" content="德州扑克金币大厅与积分房源码，支持金币大厅、积分房、俱乐部、私人房间、MTT/SNG 锦标赛、排行榜、商城充值和多语言版本。">
+  <meta property="og:image" content="https://masterai-top.github.io/Texas-Hold-em-Points-Lobby/Assets/screenshots/dating.jpg">
   <style>
-    :root{--bg:#f8fafc;--card:#fff;--text:#162033;--muted:#64748b;--gold:#b45309;--line:#e5e7eb}
-    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-    header{padding:66px 24px;background:linear-gradient(135deg,#020617,#92400e);color:#fff}.wrap{max-width:1120px;margin:0 auto}
-    nav{margin-bottom:30px}nav a{color:#fde68a;margin-right:18px;text-decoration:none;font-weight:700}
-    h1{font-size:44px;line-height:1.12;margin:18px 0 14px}header p{max-width:900px;color:#fffbeb;font-size:18px;line-height:1.75}
-    main{max-width:1120px;margin:0 auto;padding:38px 22px 72px}h2{color:var(--gold);font-size:30px;margin:0 0 14px}h3{margin:0 0 10px;color:#0f172a}
-    p,li{color:var(--muted);line-height:1.75}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin:20px 0;box-shadow:0 14px 34px rgba(15,23,42,.08)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-    .badge{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(245,158,11,.22);color:#fff7ed;font-size:14px;font-weight:700}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;background:#d97706;color:#fff;margin-right:10px;margin-top:12px}.btn.secondary{background:#0f172a}
-    .screenshot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:22px}.screenshot-grid figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(15,23,42,.10)}
-    .screenshot-grid img{width:100%;height:auto;display:block;background:#eef2f7}.screenshot-grid figcaption{padding:13px 15px;color:#475569;font-size:14px;border-top:1px solid #eef2f7}
-    code{background:#f1f5f9;padding:2px 6px;border-radius:6px;color:#0f172a}footer{padding:30px;text-align:center;color:var(--muted)}
+    :root {
+      --bg:#f8fafc; --card:#ffffff; --text:#172033; --muted:#64748b;
+      --gold:#b45309; --gold2:#d97706; --line:#e5e7eb; --dark:#0f172a;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); }
+    header { padding:66px 24px; background:linear-gradient(135deg,#020617,#92400e); color:#fff; }
+    .wrap { max-width:1120px; margin:0 auto; }
+    nav { margin-bottom:30px; }
+    nav a { color:#fde68a; margin-right:18px; text-decoration:none; font-weight:700; }
+    h1 { font-size:44px; line-height:1.12; margin:18px 0 14px; }
+    header p { max-width:920px; color:#fffbeb; font-size:18px; line-height:1.75; }
+    main { max-width:1120px; margin:0 auto; padding:38px 22px 72px; }
+    h2 { color:var(--gold); font-size:30px; margin:0 0 14px; }
+    h3 { margin:0 0 10px; color:#0f172a; }
+    p, li { color:var(--muted); line-height:1.75; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px; margin:20px 0; box-shadow:0 14px 34px rgba(15,23,42,.08); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+    .badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .badge { display:inline-block; padding:8px 12px; border-radius:999px; background:rgba(245,158,11,.22); color:#fff7ed; font-size:14px; font-weight:700; }
+    .btn { display:inline-block; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700; background:var(--gold2); color:#fff; margin-right:10px; margin-top:12px; }
+    .btn.secondary { background:var(--dark); }
+    .screenshot-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; margin-top:22px; }
+    .screenshot-grid figure { margin:0; background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 16px 40px rgba(15,23,42,.10); }
+    .screenshot-grid img { width:100%; height:auto; display:block; background:#eef2f7; }
+    .screenshot-grid figcaption { padding:13px 15px; color:#475569; font-size:14px; border-top:1px solid #eef2f7; }
+    code { background:#f1f5f9; padding:2px 6px; border-radius:6px; color:#0f172a; }
+    footer { padding:30px; text-align:center; color:var(--muted); }
   </style>
 </head>
 <body>
-<header><div class="wrap"><nav><a href="./">Home</a><a href="features.html">Features</a><a href="architecture.html">Architecture</a><a href="deployment.html">Deployment</a><a href="https://github.com/masterai-top/Texas-Hold-em-Points-Lobby">GitHub</a></nav><h1>Texas Hold'em Points Lobby Source Code</h1><p>德州扑克金币大厅与积分房源码，支持金币大厅、积分房、俱乐部、私人房间、MTT/SNG 锦标赛、排行榜、商城、充值、Unity3D 客户端、C++ 游戏服务端和多语言版本。</p><div class="badges"><span class="badge">德州扑克源码</span><span class="badge">金币大厅</span><span class="badge">积分房</span><span class="badge">Poker Lobby</span><span class="badge">Unity3D</span><span class="badge">C++ Server</span></div></div></header>
-<main>
-<section class="card"><h2>Texas Hold'em Points Lobby / 德州扑克金币大厅</h2><p>This project provides a complete poker lobby foundation for coin tables, points rooms, poker clubs, private rooms, tournaments, rankings, shop and recharge modules.</p><p>本项目适合德州扑克源码、德州金币大厅源码、德州积分房源码、德州俱乐部源码、德州扑克赛事系统和完整德州商业解决方案。</p><a class="btn" href="https://github.com/masterai-top/Texas-Hold-em-Points-Lobby">View Source on GitHub</a><a class="btn secondary" href="features.html">View Features</a></section>
-<section class="grid"><div class="card"><h3>Coin Lobby</h3><p>Coin tables, points rooms, room filters, online users, rankings and lobby recommendations.</p></div><div class="card"><h3>Club & Private Rooms</h3><p>Club members, private rooms, password rooms, blind settings and friend invitations.</p></div><div class="card"><h3>Tournaments & Operation</h3><p>MTT/SNG events, shop, recharge, order records, rankings and admin operation extensions.</p></div></section>
-<section class="card" id="screenshots"><h2>Product Screenshots / 产品截图</h2><div class="screenshot-grid">
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="./">Home</a>
+        <a href="features.html">Features</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="deployment.html">Deployment</a>
+        <a href="https://github.com/masterai-top/Texas-Hold-em-Points-Lobby">GitHub</a>
+      </nav>
+      <h1>Texas Hold'em Points Lobby Source Code</h1>
+      <p>德州扑克金币大厅与积分房源码，支持金币大厅、积分房、俱乐部、私人房间、MTT/SNG 锦标赛、排行榜、商城、充值、Unity3D 客户端、C++ 游戏服务端和多语言版本。</p>
+      <div class="badges">
+        <span class="badge">德州扑克源码</span><span class="badge">金币大厅</span><span class="badge">积分房</span>
+        <span class="badge">Poker Lobby</span><span class="badge">SNG / MTT</span><span class="badge">Unity3D + C++</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Texas Hold'em Points Lobby / 德州扑克金币大厅</h2>
+      <p>This project provides a complete poker lobby foundation for coin tables, points rooms, poker clubs, private rooms, tournaments, rankings, shop and recharge modules.</p>
+      <p>本项目适合德州扑克源码、德州金币大厅源码、德州积分房源码、德州俱乐部源码、德州扑克赛事系统和完整德州商业解决方案。</p>
+      <a class="btn" href="https://github.com/masterai-top/Texas-Hold-em-Points-Lobby">View Source on GitHub</a>
+      <a class="btn secondary" href="features.html">View Features</a>
+    </section>
+    <section class="grid">
+      <div class="card"><h3>Coin Lobby</h3><p>金币桌、积分房、房间筛选、在线人数、排行榜和大厅推荐位。</p></div>
+      <div class="card"><h3>Club & Private Rooms</h3><p>俱乐部成员、私人房、密码房、盲注设置和好友邀请。</p></div>
+      <div class="card"><h3>Tournaments & Operation</h3><p>MTT/SNG 赛事、商城、充值、订单记录、排行榜和后台运营扩展。</p></div>
+    </section>
+    <section class="card" id="screenshots">
+      <h2>Product Screenshots / 产品截图</h2>
+      <div class="screenshot-grid">
         <figure>
-          <img src="assets/Screenshots/33.png" alt="Texas Hold'em Points Lobby 德州扑克金币大厅" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>新手引导</figcaption>
+          <img src="Assets/screenshots/03.jpg" alt="Texas Hold'em Points Lobby - 德州扑克积分房界面" loading="lazy">
+          <figcaption>德州扑克积分房界面</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/dating.jpg" alt="Texas Hold'em Points Lobby 德州扑克积分房" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>德州扑克积分大厅 </figcaption>
+          <img src="Assets/screenshots/06-9.jpg" alt="Texas Hold'em Points Lobby - 德州扑克九人桌牌局" loading="lazy">
+          <figcaption>德州扑克九人桌牌局</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/sng.jpg" alt="Texas Hold'em Points Lobby 德州扑克俱乐部" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>德州SNG房</figcaption>
+          <img src="Assets/screenshots/07.jpg" alt="Texas Hold'em Points Lobby - 德州扑克俱乐部房间" loading="lazy">
+          <figcaption>德州扑克俱乐部房间</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/wanfa.jpg" alt="Texas Hold'em Points Lobby 德州扑克私人房" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>选房间</figcaption>
+          <img src="Assets/screenshots/08.jpg" alt="Texas Hold'em Points Lobby - 德州扑克金币大厅" loading="lazy">
+          <figcaption>德州扑克金币大厅</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/88.png" alt="Texas Hold'em Points Lobby 德州扑克赛事" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>比赛</figcaption>
+          <img src="Assets/screenshots/33.png" alt="Texas Hold'em Points Lobby - 德州扑克游戏大厅" loading="lazy">
+          <figcaption>德州扑克游戏大厅</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/03.jpg" alt="Texas Hold'em Points Lobby 德州扑克排行榜" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>三人房打牌</figcaption>
+          <img src="Assets/screenshots/44.jpg" alt="Texas Hold'em Points Lobby - 德州扑克私人房" loading="lazy">
+          <figcaption>德州扑克私人房</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/06-9.jpg" alt="Texas Hold'em Points Lobby 德州扑克商城" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>德州六人房</figcaption>
+          <img src="Assets/screenshots/88.png" alt="Texas Hold'em Points Lobby - 德州扑克排行榜" loading="lazy">
+          <figcaption>德州扑克排行榜</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/07.jpg" alt="Texas Hold'em Points Lobby 德州扑克后台" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>德州七人房</figcaption>
+          <img src="Assets/screenshots/99.jpg" alt="Texas Hold'em Points Lobby - 德州扑克运营后台" loading="lazy">
+          <figcaption>德州扑克运营后台</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/08.jpg" alt="Texas Hold'em Points Lobby 德州扑克金币大厅" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>德州八人房</figcaption>
+          <img src="Assets/screenshots/dating.jpg" alt="Texas Hold'em Points Lobby - 德州扑克大厅列表" loading="lazy">
+          <figcaption>德州扑克大厅列表</figcaption>
         </figure>
         <figure>
-          <img src="assets/Screenshots/99.jpgg" alt="Texas Hold'em Points Lobby 德州扑克积分房" loading="lazy" onerror="this.closest('figure').style.display='none'">
-          <figcaption>德州游戏打牌</figcaption>
+          <img src="Assets/screenshots/sng.jpg" alt="Texas Hold'em Points Lobby - SNG 德州扑克赛事" loading="lazy">
+          <figcaption>SNG 德州扑克赛事</figcaption>
         </figure>
-        
-       
-      </div></section>
-<section class="card"><h2>SEO Keywords / 搜索关键词</h2><p>Texas Hold'em poker source code, Texas Hold'em Points Lobby, poker lobby system, poker club software, Unity3D poker game, C++ poker server, 德州扑克源码、德州源码、德州扑克金币大厅源码、德州积分房源码、德州俱乐部源码、德州扑克赛事系统。</p></section>
-</main><footer>© 2026 masterai-top/Texas-Hold-em-Points-Lobby. Use only within lawful regions and lawful business scopes.</footer>
-</body></html>
+        <figure>
+          <img src="Assets/screenshots/wanfa.jpg" alt="Texas Hold'em Points Lobby - 德州扑克玩法说明" loading="lazy">
+          <figcaption>德州扑克玩法说明</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="card">
+      <h2>SEO Keywords / 搜索关键词</h2>
+      <p>Texas Hold'em poker source code, Texas Hold'em Points Lobby, poker lobby system, poker club software, Unity3D poker game, C++ poker server, 德州扑克源码、德州源码、德州扑克金币大厅源码、德州积分房源码、德州俱乐部源码、德州扑克赛事系统。</p>
+    </section>
+  </main>
+  <footer>© 2026 masterai-top/Texas-Hold-em-Points-Lobby. Use only within lawful regions and lawful business scopes.</footer>
+</body>
+</html>
